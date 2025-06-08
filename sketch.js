@@ -157,13 +157,13 @@ tfvis.render.scatterplot(
   );
   
 // Create SECOND model to train with noisy data (BEST-FIT)
-const model_noisy = createModel();
+// const model_noisy = createModel();
   
-// Train the model
-await trainModel(model_noisy, data.inputs_train, data.labels_noisy_train, n_epochs);
-console.log('Done Training (Noisy)');
+// // Train the model
+// await trainModel(model_noisy, data.inputs_train, data.labels_noisy_train, n_epochs);
+// console.log('Done Training (Noisy)');
 
-
+const model_noisy = await tf.loadLayersModel('models/my-model-2.json');
 
 // Make some predictions using the model and compare them
 predictions_noisy_train = testModel(model_noisy, data.inputs_train);
@@ -197,11 +197,13 @@ tfvis.render.scatterplot(
   
   
 // Create THIRD model to train with noisy data and OVER-FIT
-const model_noisy_overfit = createModel();
+// const model_noisy_overfit = createModel();
   
-// Train the model
-await trainModel(model_noisy_overfit, data.inputs_train, data.labels_noisy_train, n_epochs_overfit);
-console.log('Done Training (Noisy)');
+// // Train the model
+// await trainModel(model_noisy_overfit, data.inputs_train, data.labels_noisy_train, n_epochs_overfit);
+// console.log('Done Training (Noisy)');
+
+const model_noisy_overfit = await tf.loadLayersModel('models/my-model-3.json');
 
 // Make some predictions using the model and compare them
 predictions_noisy_overf_train = testModel(model_noisy_overfit, data.inputs_train);
