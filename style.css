@@ -33,3 +33,20 @@ position: initial;
    position: relative;
    top: -700px;
 }
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(6){
+  left: 650px;
+    position: relative;
+  top: -1079px;
+}
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(7){
+   position: relative;
+   top: -1050px;
+}
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(8){
+ left: 650px;
+    position: relative;
+  top: -1429px;  
+}
