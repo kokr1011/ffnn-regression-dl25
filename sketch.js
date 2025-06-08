@@ -125,7 +125,7 @@ async function run() {
 // await trainModel(model, data.inputs_train, data.labels_train, n_epochs);
 // console.log('Done Training (Clean)');
 
-const model = await tf.loadLayersModel('models/my-model-1');
+const model = await tf.loadLayersModel('models/my-model-1.json');
 
 // Make some predictions using the model and compare them
 predictions_train = testModel(model, data.inputs_train);
