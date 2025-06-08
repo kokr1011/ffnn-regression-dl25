@@ -16,3 +16,15 @@ position: initial;
     position: relative;
     top: -379px;
 }
+
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(3){
+  position: relative;
+   top: -350px;
+}
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(4){
+  left: 650px;
+    position: relative;
+   top: -350;
+}
