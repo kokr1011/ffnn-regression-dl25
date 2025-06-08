@@ -125,7 +125,7 @@ async function run() {
 // await trainModel(model, data.inputs_train, data.labels_train, n_epochs);
 // console.log('Done Training (Clean)');
 
-const model = await tf.loadLayersModel('localstorage://models/my-model-1');
+const model = await tf.loadLayersModel('models/my-model-1');
 
 // Make some predictions using the model and compare them
 predictions_train = testModel(model, data.inputs_train);
@@ -162,6 +162,8 @@ const model_noisy = createModel();
 // Train the model
 await trainModel(model_noisy, data.inputs_train, data.labels_noisy_train, n_epochs);
 console.log('Done Training (Noisy)');
+
+
 
 // Make some predictions using the model and compare them
 predictions_noisy_train = testModel(model_noisy, data.inputs_train);
