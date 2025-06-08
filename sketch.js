@@ -235,10 +235,15 @@ tfvis.render.scatterplot(
     }
   );
   
+  document.getElementById('project-documentation').style.display = 'block';
   
 }
 
 document.addEventListener('DOMContentLoaded', run);
+document.addEventListener('DOMContentLoaded', () => {
+  const docSection = document.getElementById('project-documentation');
+  document.body.appendChild(docSection); // bewegt ans Ende
+});
 
 
 async function trainModel(model, inputs, labels, n_epochs) {
