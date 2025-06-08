@@ -26,5 +26,10 @@ position: initial;
 #tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(4){
   left: 650px;
     position: relative;
-   top: -729;
+   top: -729px;
+}
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(5){
+   position: relative;
+   top: -700px;
 }
