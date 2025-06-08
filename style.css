@@ -5,7 +5,12 @@ html, body {
 canvas {
   display: block;
 }
-
+.chart-container,
+.chart-wrapper,
+canvas {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 .css-1dwmjn, [data-css-1dwmjn] {
 position: initial;
     width: 1300px;
@@ -49,4 +54,7 @@ position: initial;
  left: 650px;
     position: relative;
   top: -1429px;  
+}
+.chart-container > *:last-child {
+  margin-bottom: 0;
 }
