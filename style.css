@@ -58,3 +58,10 @@ position: initial;
 .chart-container > *:last-child {
   margin-bottom: 0;
 }
+
+#visor.tfjs-visor-container {
+  height: 300px !important;      /* oder ein anderer fester Wert */
+  max-height: 300px !important;
+  overflow-y: auto !important;   /* falls Inhalt überläuft */
+  bottom: 0 !important;          /* bleibt am unteren Rand */
+}
