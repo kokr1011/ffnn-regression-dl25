@@ -69,3 +69,8 @@ position: initial;
 .visor-controls{
   display: none;
 }
+
+#tfjs-visor-container > div{
+height: 1700px;
+  overflow: hidden;
+}
