@@ -115,16 +115,17 @@ async function run() {
 
   // More code will be added below
   // Create the model
-const model = createModel();
-tfvis.show.modelSummary({name: 'Model Summary'}, model);
-  // Convert the data to a form we can use for training.
-//const tensorData = convertToTensor(data);
-//const {inputs, labels} = tensorData;
+// const model = createModel();
+// tfvis.show.modelSummary({name: 'Model Summary'}, model);
+//   // Convert the data to a form we can use for training.
+// //const tensorData = convertToTensor(data);
+// //const {inputs, labels} = tensorData;
 
-// Train the model
-await trainModel(model, data.inputs_train, data.labels_train, n_epochs);
-console.log('Done Training (Clean)');
+// // Train the model
+// await trainModel(model, data.inputs_train, data.labels_train, n_epochs);
+// console.log('Done Training (Clean)');
 
+const model = await tf.loadLayersModel('localstorage://models/my-model-1');
 
 // Make some predictions using the model and compare them
 predictions_train = testModel(model, data.inputs_train);
