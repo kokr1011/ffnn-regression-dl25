@@ -65,3 +65,7 @@ position: initial;
   overflow-y: auto !important;   /* falls Inhalt überläuft */
   bottom: 0 !important;          /* bleibt am unteren Rand */
 }
+
+.visor-controls{
+  display: none;
+}
