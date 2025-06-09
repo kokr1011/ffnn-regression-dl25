@@ -257,7 +257,7 @@ tfvis.render.scatterplot(
   );
   
   document.getElementById('project-documentation').style.display = 'block';
- document.body.appendChild(document.getElementById('project-documentation'));
+ // document.body.appendChild(document.getElementById('project-documentation'));
 }
 
 document.addEventListener('DOMContentLoaded', run);
