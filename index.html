@@ -29,16 +29,33 @@
   <section id="project-documentation" style="display: none;">
  
 <h2>Disscusion</h2>
-<p></p>
-    
+  <p>All models consist of four layers – input, two dense layers, and an output layer.
+Each of the two dense (hidden) layers contains 100 neurons in both the noise-free and the best-fit model.
+The models were trained in batches of size 32 over 150 epochs. The Rectified Linear Unit (relu) was chosen as the activation function for the dense layers.
+The optimizer used is Adam with a learning rate of 0.025, and the loss function selected was the Mean Squared Error (MSE). <br>
+  <strong>Overfit Model:</strong> The dense layers each contain 200 neurons, and the training was conducted over 400 epochs.
+</p>
+<h2>Observations:</h2> 
+    <p>The values in the training dataset are crucial for the quality of the model, as only 50 values are used for training. Despite the selected uniform distribution, the training data may still be randomly inhomogeneously distributed due to the small sample size (e.g., clustering around the center of the interval). In such cases, the prediction accuracy is significantly affected. Therefore, care must be taken to ensure that the training data is truly uniformly distributed and homogeneously covers the value range.
+The “ideally” trained model achieves the highest accuracy on the training data and on the noise-free test data.
+The “best-fit” model represents a good compromise between training and test loss.
+The “over-fit” model shows a significantly lower training loss compared to its test loss.
+</p>
 <h2>1) Technical Documentation</h2>
  
   <h3>Frameworks and Libraries Used:</h3>
 <ul>
-<li><strong><a href="https://p5js.org/" target="_blank">p5.js</a></strong>: </li>
-<li><strong><a href="https://ml5js.org/" target="_blank">ml5.js</a></strong>: </li>
-<li><strong><a href="https://www.chartjs.org/" target="_blank">Chart.js</a></strong>: </li>
-<li><strong><a href="https://docs.github.com/en/pages" target="_blank">GitHub Pages</a></strong>: </li>
+<li><strong><a href="https://p5js.org/" target="_blank">p5.js</a></strong>: A JavaScript library that 
+      contains predefined templates that make it easier to develop directly in the web browser. This project was 
+      almost entirely developed in the p5.js editor, which offers instant compilation and dynamic tracking of 
+      code changes. Interactive visual elements also work smoothly.</li>
+<li><strong><a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a></strong>: For creating, training, saving, 
+  and loading neural networks. In addition, the required random values were generated using this library, e.g., with 
+  the method tf.randomUniform().</li>
+<li><strong><a href="https://js.tensorflow.org/api_vis/1.5.1/" target="_blank">TensorFlow.js Vis</a></strong>: For visualizing model parameters, training progress, and predictions.</li>
+<li><strong><a href="https://docs.github.com/en/pages" target="_blank">GitHub Pages</a></strong>: A hosting platform 
+      for static sites, used for public accessibility of the application. The project has been uploaded to GitHub, from where 
+      it is directly deployed via this option.</li>
 </ul>
  
   <h3>Technical Specifications:</h3>
