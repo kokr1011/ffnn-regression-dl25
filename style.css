@@ -83,3 +83,22 @@ height: 1700px;
     margin-top: 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
+#tfjs-visor-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
+  position: static !important;
+}
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  margin-bottom: 20px;
+  flex: 0 0 48%;
+  box-sizing: border-box;
+}
+
