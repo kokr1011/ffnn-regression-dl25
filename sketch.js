@@ -125,7 +125,7 @@ async function run() {
 // await trainModel(model, data.inputs_train, data.labels_train, n_epochs);
 // console.log('Done Training (Clean)');
 
-const model = await tf.loadLayersModel('models/my-model-1.json');
+const model = await tf.loadLayersModel('models/model1.json');
 
 // Make some predictions using the model and compare them
 predictions_train = testModel(model, data.inputs_train);
@@ -163,7 +163,7 @@ tfvis.render.scatterplot(
 // await trainModel(model_noisy, data.inputs_train, data.labels_noisy_train, n_epochs);
 // console.log('Done Training (Noisy)');
 
-const model_noisy = await tf.loadLayersModel('models/my-model-2.json');
+const model_noisy = await tf.loadLayersModel('models/model2.json');
 
 // Make some predictions using the model and compare them
 predictions_noisy_train = testModel(model_noisy, data.inputs_train);
@@ -203,7 +203,7 @@ tfvis.render.scatterplot(
 // await trainModel(model_noisy_overfit, data.inputs_train, data.labels_noisy_train, n_epochs_overfit);
 // console.log('Done Training (Noisy)');
 
-const model_noisy_overfit = await tf.loadLayersModel('models/my-model-3.json');
+const model_noisy_overfit = await tf.loadLayersModel('models/model3.json');
 
 // Make some predictions using the model and compare them
 predictions_noisy_overf_train = testModel(model_noisy_overfit, data.inputs_train);
