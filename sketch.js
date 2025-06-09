@@ -197,7 +197,7 @@ mse_noisy_train = tf.losses.meanSquaredError(tf.reshape(data.labels_noisy_train,
 mse_noisy_test = tf.losses.meanSquaredError(tf.reshape(data.labels_noisy_test,[-1]), predictions_noisy_test).dataSync()[0]
   
 tfvis.render.scatterplot(
-    {name: `Noisy Model Predictions (Train), MSE=${mse_noisy_train.toFixed(3).toString()}`},
+    {name: `Noisy BestFit Model Predictions (Train), MSE=${mse_noisy_train.toFixed(3).toString()}`},
     {values: pred_noisy_train, series: ['train']},
     {
       xLabel: 'X (Input)',
@@ -207,7 +207,7 @@ tfvis.render.scatterplot(
   );
   
 tfvis.render.scatterplot(
-    {name: `Noisy Model Predictions (Test), MSE=${mse_noisy_test.toFixed(3).toString()}`},
+    {name: `Noisy BestFit Model Predictions (Test), MSE=${mse_noisy_test.toFixed(3).toString()}`},
     {values: pred_noisy_test, series: ['test']},
     {
       xLabel: 'X (Input)',
