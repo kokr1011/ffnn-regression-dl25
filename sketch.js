@@ -257,8 +257,17 @@ tfvis.render.scatterplot(
     }
   );
   
-  document.getElementById('project-documentation').style.display = 'block';
+  // document.getElementById('project-documentation').style.display = 'block';
  // document.body.appendChild(document.getElementById('project-documentation'));
+  const doc = document.getElementById('project-documentation');
+doc.style.display = 'block';
+
+// Stelle sicher, dass er hinter den Diagrammen eingefügt wird
+const visorContainer = document.getElementById('tfjs-visor-container');
+if (visorContainer && visorContainer.parentNode) {
+  visorContainer.parentNode.insertBefore(doc, visorContainer.nextSibling);
+}
+
 }
 
 // document.addEventListener('DOMContentLoaded', run);
