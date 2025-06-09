@@ -70,17 +70,13 @@ The “over-fit” model shows a significantly lower training loss compared to i
   <h2>2) Subject-Specific Documentation</h2>
  
   <h3>Implementation of Logic and Key Elements:</h3>
-<ul>
-<ul>
-<li></li>
-<li></li>
-<ul>
-<li></li>
-<li></li>
-</ul>
-<li></li>
-<li></li>
-</ul>
+    Prior to execution, the three models were trained, tested, and stored along with their corresponding data.
+
+    <h2>Workflow of the Online Application:</h2>
+<p>First, new uniformly distributed training and test data are generated using the getData() method. This method also handles 
+  the splitting of the dataset and the addition of noise. Subsequently, the three neural networks are loaded, and their predictions on 
+  the test data are computed using model.predict(). The use of pre-trained models significantly accelerates visualization and ensures an optimal user experience.
+</p>
  
 </section>
 </div>
