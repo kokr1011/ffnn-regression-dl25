@@ -10,6 +10,20 @@ function draw() {
 
 console.log('Hello TensorFlow');
 
+async function loadDatasetFromFile(url = 'models/datensatz.json') {
+  const response = await fetch(url);
+  const d = await response.json();
+
+  return {
+    inputs_train: tf.tensor2d(d.x_train),
+    labels_train: tf.tensor2d(d.y_train),
+    labels_noisy_train: tf.tensor2d(d.y_noisy_train),
+    inputs_test: tf.tensor2d(d.x_test),
+    labels_test: tf.tensor2d(d.y_test),
+    labels_noisy_test: tf.tensor2d(d.y_noisy_test),
+  };
+}
+
 function createModel(n_hidden=100) {
   // Create a sequential model
   const model = tf.sequential();
@@ -67,7 +81,14 @@ async function run() {
   // Select dataset size to be generated
   const N_train = 50;
   const N_test = 50;
-  const data = await getData(N_train, N_test);
+  // const data = await getData(N_train, N_test);
+  try {
+    data = await loadDatasetFromFile();
+    console.log("Datensatz erfolgreich geladen.");
+    } catch (e) {
+    console.warn("Kein gespeicherter Datensatz gefunden. Generiere neuen...");
+    data = await getData(N_train, N_test);
+  }
   
   n_epochs = 100;
   n_epochs_overfit = 100;
