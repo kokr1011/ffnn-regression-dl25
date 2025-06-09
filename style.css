@@ -74,3 +74,12 @@ position: initial;
 height: 1700px;
   overflow: hidden;
 }
+
+#project-documentation{
+    background-color: #fafafa;
+    padding: 30px;
+    max-width: 1240px;
+    min-width: 1000px;
+    margin-top: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
