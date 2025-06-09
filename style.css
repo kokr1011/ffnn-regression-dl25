@@ -10,7 +10,9 @@ canvas {
   display: block;
 }
 
-
+h1, h2 {
+    color: #1976d2;
+}
 .chart-container,
 .chart-wrapper,
 canvas {
