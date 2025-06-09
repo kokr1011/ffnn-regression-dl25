@@ -261,7 +261,8 @@ tfvis.render.scatterplot(
  // document.body.appendChild(document.getElementById('project-documentation'));
 }
 
-document.addEventListener('DOMContentLoaded', run);
+// document.addEventListener('DOMContentLoaded', run);
+
 //  document.addEventListener('DOMContentLoaded', () => {
 //   const docSection = document.getElementById('project-documentation');
 //   document.body.appendChild(docSection); // bewegt ans Ende
@@ -308,4 +309,4 @@ function testModel(model, inputData) {
 }
 
 
-
+window.addEventListener('load', run);
