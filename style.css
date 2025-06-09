@@ -1,11 +1,16 @@
 html, body {
   margin: 0;
-  padding: 0;
+  padding: 10px 20px;
 }
 canvas {
   display: block;
 }
-
+.chart-container,
+.chart-wrapper,
+canvas {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 .css-1dwmjn, [data-css-1dwmjn] {
 position: initial;
     width: 1300px;
@@ -15,4 +20,57 @@ position: initial;
     left: 650px;
     position: relative;
     top: -379px;
+}
+
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(3){
+  position: relative;
+   top: -350px;
+}
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(4){
+  left: 650px;
+    position: relative;
+   top: -729px;
+}
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(5){
+   position: relative;
+   top: -700px;
+}
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(6){
+  left: 650px;
+    position: relative;
+  top: -1079px;
+}
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(7){
+   position: relative;
+   top: -1050px;
+}
+
+#tfjs-visor-container > div > div.css-nil.visor-surfaces > div:nth-child(8){
+ left: 650px;
+    position: relative;
+  top: -1429px;  
+}
+.chart-container > *:last-child {
+  margin-bottom: 0;
+}
+
+#visor.tfjs-visor-container {
+  height: 300px !important;      /* oder ein anderer fester Wert */
+  max-height: 300px !important;
+  overflow-y: auto !important;   /* falls Inhalt überläuft */
+  bottom: 0 !important;          /* bleibt am unteren Rand */
+}
+
+.visor-controls{
+  display: none;
+}
+
+#tfjs-visor-container > div{
+height: 1700px;
+  overflow: hidden;
 }
