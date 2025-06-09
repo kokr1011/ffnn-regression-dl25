@@ -9,6 +9,7 @@ function draw() {
 */
 
 console.log('Hello TensorFlow');
+let data = null;
 
 async function loadDatasetFromFile(url = 'models/datensatz.json') {
   const response = await fetch(url);
