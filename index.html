@@ -30,21 +30,30 @@
 </div>
      <section id="project-documentation" style="display: none;">
  
-<h2>Disscusion</h2>
-  <p>All models consist of four layers – input, two dense layers, and an output layer.
-Each of the two dense (hidden) layers contains 100 neurons in both the noise-free and the best-fit model.
-The models were trained in batches of size 32 over 150 epochs. The Rectified Linear Unit (relu) was chosen as the activation function for the dense layers.
-The optimizer used is Adam with a learning rate of 0.025, and the loss function selected was the Mean Squared Error (MSE). <br>
-  <strong>Overfit Model:</strong> The dense layers each contain 200 neurons, and the training was conducted over 400 epochs.
-</p>
-<h2>Observations:</h2> 
-    <p>The values in the training dataset are crucial for the quality of the model, as only 50 values are used for training. Despite the selected uniform distribution, the training data may still be randomly inhomogeneously distributed due to the small sample size (e.g., clustering around the center of the interval). In such cases, the prediction accuracy is significantly affected. Therefore, care must be taken to ensure that the training data is truly uniformly distributed and homogeneously covers the value range.
+<h2>Discussion</h2>
+ <p>The models differ primarily in training epochs and architecture depth. The "ideal" model trained on noise-free 
+   data performed equally well on training and test sets (MSE ≈ 0.01), confirming that overfitting is not possible 
+   without noise. The "best-fit" model was trained on noisy data and achieved a balanced performance (MSE_train ≈ 0.051, MSE_test ≈ 0.069), 
+   suggesting good generalization. The "overfit" model, however, shows clear signs of overfitting with MSE_train ≈ 0.048 and MSE_test ≈ 0.089. 
+   This illustrates that longer training on noisy data leads to memorization of the noise. The values in the training dataset are crucial for the quality of the model, as only 50 values are used for training. Despite the selected uniform distribution, 
+      the training data may still be randomly inhomogeneously distributed due to the small sample size (e.g., clustering around the center of the interval). In such cases, 
+      the prediction accuracy is significantly affected. Therefore, care must be taken to ensure that the training data is truly uniformly distributed and homogeneously covers the value range.
+   The results confirm that early stopping or validation sets are essential when noise is present. </p>
+<!-- <h2>Observations:</h2> 
+    <p>The values in the training dataset are crucial for the quality of the model, as only 50 values are used for training. Despite the selected uniform distribution, 
+      the training data may still be randomly inhomogeneously distributed due to the small sample size (e.g., clustering around the center of the interval). In such cases, 
+      the prediction accuracy is significantly affected. Therefore, care must be taken to ensure that the training data is truly uniformly distributed and homogeneously covers the value range.
 The “ideally” trained model achieves the highest accuracy on the training data and on the noise-free test data.
 The “best-fit” model represents a good compromise between training and test loss.
 The “over-fit” model shows a significantly lower training loss compared to its test loss.
-</p>
+</p> -->
 <h2>1) Technical Documentation</h2>
- 
+  <p>All models consist of four layers – input, two dense layers, and an output layer.
+Each of the two dense (hidden) layers contains 200 neurons in both the noise-free and the best-fit model.
+The models were trained in batches of size 32 over 150 epochs. The Rectified Linear Unit (ReLU) was chosen as the activation function for the dense layers.
+The optimizer used is Adam with a learning rate of 0.01, and the loss function selected was the Mean Squared Error (MSE). <br>
+  <strong>Overfit Model:</strong> The dense layers each contain 200 neurons, and the training was conducted over 1000 epochs.
+</p>
   <h3>Frameworks and Libraries Used:</h3>
 <ul>
 <li><strong><a href="https://p5js.org/" target="_blank">p5.js</a></strong>: A JavaScript library that 
@@ -63,8 +72,11 @@ The “over-fit” model shows a significantly lower training loss compared to i
   <h3>Technical Specifications:</h3>
 <ul>
 <ul>
-<li></li>
-<li></li>
+<li>The application loads pre-trained models and loads a randomly pre-generated dataset.</li>
+  <li>The models were trained using a separate script in the p5 editor with the option to save the datasets and the model coefficients using buttons. 
+    This enabled a user-friendly and intuitive method to experiment with the models and find suitable parameters.</li>
+<li>Mean Squared Error (MSE) is calculated and displayed for each model on training and test sets.</li>
+  <li>All diagrams are rendered dynamically via tfjs-vis.</li>
 </ul>
  
   </ul>
@@ -72,12 +84,16 @@ The “over-fit” model shows a significantly lower training loss compared to i
   <h2>2) Subject-Specific Documentation</h2>
  
   <h3>Implementation of Logic and Key Elements:</h3>
-    Prior to execution, the three models were trained, tested, and stored along with their corresponding data.
+    Prior to execution, the three neural networks (models) were trained, tested, and stored along with their corresponding data.
+These models were implemented and trained using a consistent architecture with two hidden layers and ReLU activation. 
+       Each model was stored and reused to allow fast and reproducible visualization. The data generation simulates realistic conditions 
+       by adding Gaussian noise to the labels. The models demonstrate key Machine-Learning phenomena: good fit, generalization, and overfitting. The online app 
+       enables experimentation without server dependency. Sources included official TensorFlow.js documentation and StackOverflow examples.
 
     <h2>Workflow of the Online Application:</h2>
-<p>First, new uniformly distributed training and test data are generated using the getData() method. This method also handles 
-  the splitting of the dataset and the addition of noise. Subsequently, the three neural networks are loaded, and their predictions on 
-  the test data are computed using model.predict(). The use of pre-trained models significantly accelerates visualization and ensures an optimal user experience.
+<p>First, pre-generated uniformly distributed training and test data are loaded using the loadDatasetFromFile() method. The loaded dataset is split into
+  training and testing data and includes the addition of noise. Subsequently, the three neural networks are loaded, and their predictions on 
+  the test data are computed using model.predict(). The use of pre-trained models and data significantly accelerates visualization and ensures an optimal user experience.
 </p>
  
 </section> 
